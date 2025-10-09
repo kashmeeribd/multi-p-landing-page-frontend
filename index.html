@@ -2,6 +2,19 @@
 <html lang="en">
 
 <head>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5SW8Z5H5');</script>
+    <!-- End Google Tag Manager -->
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>কাশ্মিরি</title>
@@ -72,13 +85,25 @@
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'YOUR_PIXEL_ID'); // <--- আপনার পিক্সেল আইডি বসান
+        fbq('init', '737196476000628'); // <--- আপনার পিক্সেল আইডি বসান
         // 1. PageView Pixel (Already Correctly Placed)
         fbq('track', 'PageView'); 
     </script>
+
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=737196476000628&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+
 </head>
 
 <body class="bg-gray-50 text-gray-800">
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SW8Z5H5" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <header class="bg-white shadow-md p-4">
         <div class="logo">
@@ -87,10 +112,12 @@
 
     <main class="container mx-auto p-4 lg:p-8">
 
+
+        <!-- Products section -->
         <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
 
             <div class="product-card bg-white border border-gray-200 rounded-lg p-4 text-center shadow-sm relative"
-                data-product-id="1" data-base-price="1150">
+                data-product-id="1" data-base-price="1150" data-product-category="Panjabi">
                 <label for="product1" class="cursor-pointer block">
                     <img src="assets/product-img/white-panjabi.png" alt="White Embroidered Panjabi"
                         class="mx-auto mb-3">
@@ -154,8 +181,8 @@
             </div>
 
             <div class="product-card bg-white border border-gray-200 rounded-lg p-4 text-center shadow-sm relative"
-                data-product-id="2" data-base-price="1150">
-                <label for="product2" class="cursor-pointer block">
+                data-product-id="2" data-base-price="1150" data-product-category="Panjabi">
+                <label for=" product2" class="cursor-pointer block">
                     <img src="assets/product-img/deep-red-panjabi.png" alt="Red Embroidered Panjabi"
                         class="mx-auto mb-3">
                     <div class="product-details">
@@ -218,54 +245,53 @@
             </div>
 
             <div class="product-card bg-white border border-gray-200 rounded-lg p-4 text-center shadow-sm relative"
-                data-product-id="3" data-base-price="1150">
-                <label for="product3" class="cursor-pointer block">
-                    <img src="assets/product-img/white-panjabi.png" alt="White Embroidered Panjabi"
-                        class="mx-auto mb-3">
-                    <div class="product-details">
-                        <h4 class="text-lg font-semibold mb-1">Embroidered Cotton Slim Fit Panjabi</h4>
-                        <div class="flex justify-center items-center space-x-2">
-                            <span class="old-price text-sm text-orange-600 line-through">Tk 2,835.00</span>
-                            <span class="new-price text-xl font-bold">Tk 1,150</span>
+                data-product-id="3" data-base-price="1150" data-product-category="Panjabi">
+                <label for=" product3" class="cursor-pointer block">
+                <img src="assets/product-img/white-panjabi.png" alt="White Embroidered Panjabi" class="mx-auto mb-3">
+                <div class="product-details">
+                    <h4 class="text-lg font-semibold mb-1">Embroidered Cotton Slim Fit Panjabi</h4>
+                    <div class="flex justify-center items-center space-x-2">
+                        <span class="old-price text-sm text-orange-600 line-through">Tk 2,835.00</span>
+                        <span class="new-price text-xl font-bold">Tk 1,150</span>
+                    </div>
+                    <div class="options mt-7 flex flex-col space-y-3 text-left">
+                        <div class="flex items-center space-x-2 mb-5">
+                            <label class="font-medium text-sm w-12">Size:</label>
+                            <div class="size-options flex space-x-2" data-selected-size="42">
+                                <span
+                                    class="size-box w-10 h-10 border border-gray-400 flex items-center justify-center text-sm hover:border-black rounded"
+                                    data-size="41">41</span>
+                                <span
+                                    class="size-box selected w-10 h-10 border border-gray-400 flex items-center justify-center text-sm hover:border-black rounded"
+                                    data-size="42">42</span>
+                                <span
+                                    class="size-box w-10 h-10 border border-gray-400 flex items-center justify-center text-sm hover:border-black rounded"
+                                    data-size="43">43</span>
+                            </div>
                         </div>
-                        <div class="options mt-7 flex flex-col space-y-3 text-left">
-                            <div class="flex items-center space-x-2 mb-5">
-                                <label class="font-medium text-sm w-12">Size:</label>
-                                <div class="size-options flex space-x-2" data-selected-size="42">
+                        <div class="flex items-center flex justify-between">
+                            <div class="flex items-center space-x-2">
+                                <label class="font-medium text-sm w-12">Color:</label>
+                                <div class="color-options flex space-x-2" data-selected-color="White">
                                     <span
-                                        class="size-box w-10 h-10 border border-gray-400 flex items-center justify-center text-sm hover:border-black rounded"
-                                        data-size="41">41</span>
-                                    <span
-                                        class="size-box selected w-10 h-10 border border-gray-400 flex items-center justify-center text-sm hover:border-black rounded"
-                                        data-size="42">42</span>
-                                    <span
-                                        class="size-box w-10 h-10 border border-gray-400 flex items-center justify-center text-sm hover:border-black rounded"
-                                        data-size="43">43</span>
+                                        class="color-box w-14 h-10 text-center flex items-center justify-center border rounded selected"
+                                        data-color="White">White</span>
                                 </div>
                             </div>
-                            <div class="flex items-center flex justify-between">
-                                <div class="flex items-center space-x-2">
-                                    <label class="font-medium text-sm w-12">Color:</label>
-                                    <div class="color-options flex space-x-2" data-selected-color="White">
-                                        <span
-                                            class="color-box w-14 h-10 text-center flex items-center justify-center border rounded selected"
-                                            data-color="White">White</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-center justify-center align-items-center">
-                                    <button
-                                        class="quantity-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-3 py-1 rounded-l-md border border-gray-300"
-                                        data-action="decrease">-</button>
-                                    <input type="number"
-                                        class="product-quantity-input w-10 text-center border-t border-b border-gray-300 py-1 focus:outline-none"
-                                        value="1" min="1" readonly>
-                                    <button
-                                        class="quantity-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-3 py-1 rounded-r-md border border-gray-300"
-                                        data-action="increase">+</button>
-                                </div>
+                            <div class="flex items-center justify-center align-items-center">
+                                <button
+                                    class="quantity-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-3 py-1 rounded-l-md border border-gray-300"
+                                    data-action="decrease">-</button>
+                                <input type="number"
+                                    class="product-quantity-input w-10 text-center border-t border-b border-gray-300 py-1 focus:outline-none"
+                                    value="1" min="1" readonly>
+                                <button
+                                    class="quantity-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-3 py-1 rounded-r-md border border-gray-300"
+                                    data-action="increase">+</button>
                             </div>
                         </div>
                     </div>
+                </div>
                 </label>
                 <div class="mt-4 flex space-x-2">
                     <button aria-pressed="false"
@@ -279,8 +305,8 @@
             </div>
 
             <div class="product-card bg-white border border-gray-200 rounded-lg p-4 text-center shadow-sm relative"
-                data-product-id="4" data-base-price="1150">
-                <label for="product4" class="cursor-pointer block">
+                data-product-id="4" data-base-price="1150" data-product-category="Panjabi">
+                <label for=" product4" class="cursor-pointer block">
                     <img src="assets/product-img/deep-red-panjabi.png" alt="Red Embroidered Panjabi"
                         class="mx-auto mb-3">
                     <div class="product-details">
@@ -344,6 +370,7 @@
 
         </section>
 
+        <!-- Product details section -->
         <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
             <div class="space-y-6">
@@ -485,7 +512,7 @@
             }
         }
 
-        // --- GLOBAL MODAL FUNCTIONS (FIXING REFERENCE ERROR) ---
+        // --- GLOBAL MODAL FUNCTIONS ---
 
         // 3. ViewContent/Product-Details Pixel (Product Details Modal)
         function openDetailsModal(productData) {
@@ -498,14 +525,35 @@
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
 
-            // 3. view-content/product-details Pixel
+            const finalPrice = parseFloat(productData.newPrice);
+
+            // 3. ViewContent Pixel (Facebook)
             trackPixelEvent('ViewContent', {
                 content_name: productData.name,
                 content_ids: [productData.id],
                 content_type: 'product',
-                value: parseFloat(productData.newPrice),
-                currency: 'BDT'
+                value: finalPrice,
+                currency: 'BDT',
+                product_category: productData.category // Category added
             });
+
+            // GTM DataLayer Push (View Item Event)
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'view_item',
+                    'ecommerce': {
+                        'currency': 'BDT',
+                        'value': finalPrice,
+                        'items': [{
+                            'item_id': productData.id,
+                            'item_name': productData.name,
+                            'item_category': productData.category, // Category added
+                            'price': finalPrice,
+                        }]
+                    }
+                });
+                console.log("DataLayer Push: View Item Event Fired");
+            }
         }
 
         window.closeDetailsModal = function () {
@@ -517,7 +565,7 @@
         }
 
         // 2. View/Content Pixel (Image Modal)
-        function openImageModal(imageSrc, imageAlt) {
+        function openImageModal(imageSrc, imageAlt, productId, productPrice, productCategory) {
             const modal = document.getElementById('imageModal');
             const fullScreenImage = document.getElementById('fullScreenImage');
             if (!modal || !fullScreenImage) return;
@@ -527,14 +575,33 @@
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
 
-            // 2. view-img/content Pixel
+            // 2. ViewContent Pixel (Facebook)
             trackPixelEvent('ViewContent', {
                 content_name: imageAlt,
-                content_ids: ['IMAGE_VIEW'],
-                content_type: 'image',
-                value: 0,
-                currency: 'BDT'
+                content_ids: [productId],
+                content_type: 'product',
+                value: productPrice,
+                currency: 'BDT',
+                product_category: productCategory // Category added
             });
+
+            // GTM DataLayer Push (View Item Event)
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'view_item',
+                    'ecommerce': {
+                        'currency': 'BDT',
+                        'value': productPrice,
+                        'items': [{
+                            'item_id': productId,
+                            'item_name': imageAlt,
+                            'item_category': productCategory, // Category added
+                            'price': productPrice,
+                        }]
+                    }
+                });
+                console.log("DataLayer Push: View Item Event Fired");
+            }
         }
 
         window.closeModal = function () {
@@ -560,7 +627,6 @@
 
             // Helper function to extract price amount from text
             function extractPrice(priceText) {
-                // Extracts number from "Tk 1,150" or "Tk 2,300.00"
                 return parseFloat(priceText.replace(/[^0-9.-]+/g, ""));
             }
 
@@ -576,7 +642,6 @@
                 const shippingCost = parseFloat(document.querySelector('input[name="shipping"]:checked').value);
                 const total = subtotal + shippingCost;
 
-                // Format total price
                 totalPriceSpan.textContent = `${total.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}Tk`;
             }
 
@@ -603,77 +668,142 @@
                     listItem.classList.add('py-2', 'border-gray-100');
 
                     listItem.innerHTML = `
-                        <div class="flex justify-between items-center bg-gray-50 p-3 rounded-md shadow-sm w-full">
+                <div class="flex justify-between items-center bg-gray-50 p-3 rounded-md shadow-sm w-full">
 
-                             <div class="flex items-start space-x-3">
-                                <img src="${item.image}"
-                                    alt="Product"
-                                    class="h-24 w-14 border border-gray-200 rounded object-cover">
+                     <div class="flex items-start space-x-3">
+                        <img src="${item.image}"
+                            alt="Product"
+                            class="h-24 w-14 border border-gray-200 rounded object-cover">
 
-                                    <div class="flex flex-col space-y-1">
-                                        <span class="font-semibold text-gray-800">${item.name}</span>
-                                        <span class="text-sm text-gray-600">Size: ${item.size}</span>
-                                        <span class="text-sm text-gray-600">Color: ${item.color}</span>
-                                        <span class="text-sm text-gray-600">Quantity: ${item.quantity}</span>
-                                    </div>
+                            <div class="flex flex-col space-y-1">
+                                <span class="font-semibold text-gray-800">${item.name}</span>
+                                <span class="text-sm text-gray-600">Category: ${item.category}</span>
+                                <span class="text-sm text-gray-600">Size: ${item.size}</span>
+                                <span class="text-sm text-gray-600">Color: ${item.color}</span>
+                                <span class="text-sm text-gray-600">Quantity: ${item.quantity}</span>
                             </div>
+                    </div>
 
-                            <div class="flex flex-col items-end space-y-7 ml-auto w-32 text-right">
-                                <button
-                                    class="delete-btn w-7 h-7 rounded-full bg-black text-white flex items-center justify-center hover:bg-red-600 transition"
-                                    aria-label="Remove item">
-                                    ✕
-                                </button>
-                                <span class="item-price font-semibold text-gray-800 text-lg">
-                                    Tk ${item.price.toFixed(2)}
-                                </span>
-                            </div>
-                        </div>
-                    `;
+                    <div class="flex flex-col items-end space-y-7 ml-auto w-32 text-right">
+                        <button
+                            class="delete-btn w-7 h-7 rounded-full bg-black text-white flex items-center justify-center hover:bg-red-600 transition"
+                            aria-label="Remove item">
+                            ✕
+                        </button>
+                        <span class="item-price font-semibold text-gray-800 text-lg">
+                            Tk ${item.price.toFixed(2)}
+                        </span>
+                    </div>
+                </div>
+            `;
                     selectedProductsList.appendChild(listItem);
                 });
 
                 calculateTotal();
             }
 
-            // --- FUNCTION: Collect all data and SEND TO SERVER (Purchase Pixel) ---
+            // --- FUNCTION: Collect all data and SEND TO SERVER (Purchase Pixel & GTM) ---
             async function handlePlaceOrder(e) {
                 e.preventDefault();
 
-                // 1. Collect Billing Details (Unchanged)
+                // 1. Collect Billing Details (User Data for Advanced Matching)
                 const nameInput = document.querySelector('input[placeholder="type your name"]').value.trim();
                 const phoneInput = document.querySelector('input[placeholder="phone number"]').value.trim();
                 const addressInput = document.querySelector('input[placeholder="type your full address"]').value.trim();
 
-                // 2. Collect Product Details (Ensuring product ID is included)
-                const orderedProducts = shoppingCart.map(item => ({
-                    image: item.image,
-                    name: item.name,
-                    price: `Tk ${item.price.toFixed(2)}`,
-                    size: item.size,
-                    color: item.color,
-                    quantity: item.quantity,
-                    productId: item.productId // Included product ID
-                }));
-
-                // Simple validation check (Unchanged)
-                if (!nameInput || !phoneInput || !addressInput || orderedProducts.length === 0) {
+                // Simple validation check
+                if (!nameInput || !phoneInput || !addressInput || shoppingCart.length === 0) {
                     alert("দয়া করে সমস্ত বিলিং তথ্য পূরণ করুন এবং কমপক্ষে একটি পণ্য কার্টে যোগ করুন।");
                     return;
                 }
 
-                // 3. Collect Shipping and Totals
+                // 2. Calculate Totals & Shipping
                 const shippingRadio = document.querySelector('input[name="shipping"]:checked');
                 const shippingCost = parseFloat(shippingRadio.value);
                 const subtotal = shoppingCart.reduce((sum, item) => sum + item.price, 0);
                 const total = subtotal + shippingCost;
 
-                // 4. Construct Final Order Object (Data to be sent to server)
+
+                // 3. Prepare Data for API, Facebook Pixel, and GTM
+
+                // Data for API Payload (Backend)
+                const orderedProducts = shoppingCart.map(item => ({
+                    image: item.image,
+                    name: item.name,
+                    category: item.category,
+                    price: `Tk ${item.price.toFixed(2)}`,
+                    size: item.size,
+                    color: item.color,
+                    quantity: item.quantity,
+                    productId: item.productId
+                }));
+
+                const productNames = shoppingCart.map(item => item.name);
+
+                // Data for Facebook Pixel 'contents' (Standard Format)
+                const pixelContents = shoppingCart.map(item => ({
+                    id: item.productId,
+                    quantity: item.quantity,
+                    item_price: item.basePrice,
+                    product_name: item.name,
+                    product_category: item.category
+                }));
+
+                // Data for GTM 'ecommerce.items' (GA4 Format + Custom Dimensions)
+                const gtmItems = shoppingCart.map(item => ({
+                    'item_id': item.productId,
+                    'item_name': item.name,
+                    'price': item.basePrice,
+                    'quantity': item.quantity,
+                    'item_category': item.category,
+                    'item_size': item.size,
+                    'item_color': item.color
+                }));
+
+
+                // 4. Fire Facebook Purchase Pixel (Enhanced with Advanced Matching)
+                trackPixelEvent('Purchase', {
+                    value: total,
+                    currency: 'BDT',
+                    content_type: 'product',
+                    num_items: shoppingCart.reduce((sum, item) => sum + item.quantity, 0),
+                    content_name: productNames.join(', '),
+                    contents: pixelContents,
+
+                    // Advanced Matching (AM) Data
+                    fn: nameInput, // Full Name
+                    ph: phoneInput, // Phone number
+                    ct: addressInput // City/Address
+                });
+
+                // 5. Fire GTM DataLayer Push (Enhanced for GA4 and User Data)
+                if (window.dataLayer) {
+                    window.dataLayer.push({
+                        'event': 'purchase',
+                        'ecommerce': {
+                            'transaction_id': 'KSMR' + Date.now().toString().slice(-6),
+                            'value': total,
+                            'currency': 'BDT',
+                            'shipping': shippingCost,
+                            'items': gtmItems
+                        },
+                        // Custom Customer Data Layer
+                        'customerData': {
+                            'full_name': nameInput,
+                            'phone': phoneInput,
+                            'address': addressInput
+                        }
+                    });
+                    console.log("DataLayer Push: Purchase Event Fired (Enhanced)");
+                }
+
+
+                // 6. Construct Final Order Object for API
                 const finalOrder = {
                     billingDetails: { name: nameInput, phone: phoneInput, address: addressInput },
                     orderedProducts,
                     summary: {
-                        subtotal: subtotal, // Sending numbers
+                        subtotal: subtotal,
                         shipping: shippingCost,
                         total: total,
                         paymentMethod: "Cash On Delivery"
@@ -681,18 +811,8 @@
                     source: 'Landing Page'
                 };
 
-                // 6. Purchase Pixel (Fired before server call)
-                trackPixelEvent('Purchase', {
-                    value: total,
-                    currency: 'BDT',
-                    content_ids: shoppingCart.map(item => item.productId),
-                    content_type: 'product',
-                    num_items: shoppingCart.reduce((sum, item) => sum + item.quantity, 0)
-                });
 
-
-                // 5. API Call to Node.js Server (REAL POST REQUEST)
-                // 🚨🚨🚨 এই ঠিকানাটি আপনার আসল API Endpoint দিয়ে পরিবর্তন করুন 🚨🚨🚨
+                // 7. API Call to Node.js Server (REAL POST REQUEST - Unchanged Logic)
                 const API_ENDPOINT = 'http://localhost:3000/api/orders';
 
                 try {
@@ -700,31 +820,27 @@
                     placeOrderButton.textContent = 'অর্ডার প্রসেসিং হচ্ছে...';
 
                     const response = await fetch(API_ENDPOINT, {
-                        method: 'POST', // 👈 POST Method Added
+                        method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
-                        body: JSON.stringify(finalOrder) // 👈 Order Data Sent
+                        body: JSON.stringify(finalOrder)
                     });
 
                     if (!response.ok) {
-                        // Handle HTTP errors (e.g., 404, 500)
                         throw new Error(`সার্ভার ত্রুটি: ${response.status} ${response.statusText}`);
                     }
 
                     const result = await response.json();
 
-                    // Assumption: Server returns a JSON object with an orderId property on success
                     if (result && result.orderId) {
                         console.log("Server Response (Success):", result);
                         alert(`অর্ডার সফলভাবে সম্পন্ন হয়েছে! Order ID: ${result.orderId}`);
 
-                        // Clear cart on success
                         shoppingCart = [];
                         updateOrderSummary();
 
                     } else {
-                        // Handle application-level errors (e.g., missing orderId)
                         throw new Error("অর্ডার কনফার্মেশনে সমস্যা হয়েছে। সার্ভার থেকে কোনো অর্ডার আইডি পাওয়া যায়নি।");
                     }
 
@@ -737,43 +853,6 @@
                     placeOrderButton.textContent = 'PLACE ORDER';
                 }
             }
-            // . . . (বাকি কোড অপরিবর্তিত) . . .
-
-            // --- 4. Billing Details Input Field Logic (Lead Pixel) ---
-            const billingInputs = [
-                document.querySelector('input[placeholder="type your name"]'),
-                document.querySelector('input[placeholder="phone number"]'),
-                document.querySelector('input[placeholder="type your full address"]')
-            ];
-            let leadFired = false;
-
-            function checkBillingDetails() {
-                if (leadFired) return;
-
-                const filledCount = billingInputs.filter(input => input.value.trim() !== '').length;
-
-                // Fire when all three inputs have been filled
-                if (filledCount === billingInputs.length) {
-                    trackPixelEvent('Lead', {
-                        content_name: 'Billing Details Filled',
-                        status: 'Complete',
-                        value: 50, // Small value for lead
-                        currency: 'BDT'
-                    });
-                    leadFired = true; // Prevents firing again
-                }
-            }
-
-            billingInputs.forEach(input => {
-                // Use blur event to check after the user finishes typing in a field
-                input.addEventListener('blur', checkBillingDetails);
-            });
-
-
-            // --- Attach Core Event Listeners ---
-            placeOrderButton.addEventListener('click', handlePlaceOrder);
-            selectedProductsList.addEventListener('click', removeProduct);
-
 
             // --- 5. Add to Cart button logic (AddToCart Pixel) ---
             document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
@@ -785,12 +864,13 @@
 
                 btn.addEventListener('click', function (e) {
                     e.preventDefault();
-                    e.stopPropagation(); // Essential to stop propagation when inside a <label>
+                    e.stopPropagation();
 
                     const card = e.target.closest('.product-card');
                     const productId = card.dataset.productId;
                     const productName = card.querySelector('h4').textContent;
                     const basePrice = parseFloat(card.dataset.basePrice);
+                    const productCategory = card.dataset.productCategory || 'Uncategorized';
                     const quantity = parseInt(card.querySelector('.product-quantity-input').value);
                     const size = card.querySelector('.size-options').dataset.selectedSize;
                     const color = card.querySelector('.color-options').dataset.selectedColor;
@@ -800,6 +880,7 @@
                         cartId: ++cartItemCounter,
                         productId: productId,
                         name: productName,
+                        category: productCategory,
                         size: size,
                         color: color,
                         quantity: quantity,
@@ -816,10 +897,30 @@
                         content_type: 'product',
                         num_items: quantity,
                         value: newItem.price,
-                        currency: 'BDT'
+                        currency: 'BDT',
+                        contents: [{ id: productId, quantity: quantity, item_price: basePrice, product_name: productName, product_category: productCategory }]
                     });
 
-                    // Visual feedback
+                    // GTM DataLayer Push (Add to Cart Event)
+                    if (window.dataLayer) {
+                        window.dataLayer.push({
+                            'event': 'add_to_cart',
+                            'ecommerce': {
+                                'currency': 'BDT',
+                                'value': newItem.price,
+                                'items': [{
+                                    'item_id': newItem.productId,
+                                    'item_name': newItem.name,
+                                    'item_category': newItem.category,
+                                    'price': newItem.basePrice,
+                                    'quantity': newItem.quantity
+                                }]
+                            }
+                        });
+                    }
+
+
+                    // Visual feedback (Unchanged)
                     e.target.textContent = "Added to Cart!";
                     e.target.classList.remove("bg-green-600", "hover:bg-green-700");
                     e.target.classList.add("bg-blue-600", "hover:bg-blue-700");
@@ -836,7 +937,7 @@
             // --- View Details Button Logic (ViewContent Pixel) ---
             document.querySelectorAll('.view-details-btn').forEach(button => {
                 button.addEventListener('click', (event) => {
-                    event.stopPropagation(); // Prevents clicking the underlying label/image
+                    event.stopPropagation();
 
                     const productCard = button.closest('.product-card');
                     if (!productCard) return;
@@ -844,12 +945,15 @@
                     const imageSrc = productCard.querySelector('img').src;
                     const newPriceText = productCard.querySelector('.new-price').textContent.replace('Tk', '').replace(/,/g, '').trim();
                     const oldPriceText = productCard.querySelector('.old-price').textContent.replace('Tk', '').replace(/,/g, '').replace('.00', '').trim();
+                    const productCategory = productCard.dataset.productCategory || 'Uncategorized';
+
                     const productData = {
                         id: productCard.dataset.productId,
                         name: name,
                         imageSrc: imageSrc,
                         newPrice: newPriceText,
-                        oldPrice: oldPriceText
+                        oldPrice: oldPriceText,
+                        category: productCategory // Category added to data object
                     };
                     openDetailsModal(productData); // Calls global function and fires ViewContent pixel
                 });
@@ -861,18 +965,96 @@
                 img.addEventListener('click', function (event) {
                     event.preventDefault();
                     event.stopPropagation();
-                    openImageModal(this.src, this.alt); // Calls global function and fires ViewContent (image) pixel
+
+                    const card = this.closest('.product-card');
+                    const productId = card.dataset.productId;
+                    const productPrice = parseFloat(card.dataset.basePrice);
+                    const productCategory = card.dataset.productCategory || 'Uncategorized';
+
+                    openImageModal(this.src, this.alt, productId, productPrice, productCategory); // Category passed to modal function
                 });
             });
 
-            // --- The rest of the existing logic (Unchanged) ---
+            // --- 4. Billing Details Input Field Logic (Lead Pixel) ---
+            const billingInputs = [
+                document.querySelector('input[placeholder="type your name"]'),
+                document.querySelector('input[placeholder="phone number"]'),
+                document.querySelector('input[placeholder="type your full address"]')
+            ];
+            let leadFired = false;
+
+            function checkBillingDetails() {
+                if (leadFired) return;
+
+                const nameInput = document.querySelector('input[placeholder="type your name"]').value.trim();
+                const phoneInput = document.querySelector('input[placeholder="phone number"]').value.trim();
+                const addressInput = document.querySelector('input[placeholder="type your full address"]').value.trim();
+                const inputValues = [nameInput, phoneInput, addressInput];
+
+                const filledCount = inputValues.filter(val => val !== '').length;
+
+                if (filledCount === inputValues.length) {
+
+                    // 🚨 সিনট্যাক্স এরর ফিক্স করা হলো
+                    const subtotal = shoppingCart.reduce((sum, item) => sum + item.price, 0);
+
+                    const orderedProducts = shoppingCart.map(item => ({ id: item.productId, name: item.name }));
+                    const contentIds = orderedProducts.map(item => item.id);
+                    const contentNames = orderedProducts.map(item => item.name).join(', ');
+                    const contentCategories = shoppingCart.map(item => item.category).filter((value, index, self) => self.indexOf(value) === index).join(', ');
+
+
+                    // 4. Lead Pixel: Dynamic Value, Content, & Advanced Matching (AM) Data
+                    trackPixelEvent('Lead', {
+                        content_name: contentNames || 'Filled Billing Details',
+                        content_ids: contentIds.length > 0 ? contentIds : ['LEAD_GENERAL'],
+                        content_type: 'product',
+                        value: subtotal > 0 ? subtotal : 50,
+                        currency: 'BDT',
+                        product_category: contentCategories || 'General Lead',
+
+                        // Advanced Matching (AM) Data:
+                        fn: nameInput,
+                        ph: phoneInput,
+                        ct: addressInput
+                    });
+
+                    // GTM DataLayer Push (Lead Event)
+                    if (window.dataLayer) {
+                        window.dataLayer.push({
+                            'event': 'generate_lead',
+                            'ecommerce': {
+                                'value': subtotal > 0 ? subtotal : 50,
+                                'currency': 'BDT',
+                                'content_name': contentNames || 'Filled Billing Details'
+                            },
+                            'customerData': {
+                                'full_name': nameInput,
+                                'phone': phoneInput,
+                                'address': addressInput
+                            },
+                            'productCategory': contentCategories || 'General Lead'
+                        });
+                    }
+
+                    leadFired = true;
+                }
+            }
+
+            billingInputs.forEach(input => {
+                input.addEventListener('blur', checkBillingDetails);
+            });
+
+            placeOrderButton.addEventListener('click', handlePlaceOrder);
+            selectedProductsList.addEventListener('click', removeProduct);
+
 
             productCards.forEach(card => {
-                // Size Selector Logic
+                // Size Selector Logic (Unchanged)
                 card.querySelectorAll('.size-box').forEach(sizeBox => {
                     sizeBox.addEventListener('click', (e) => {
                         e.preventDefault();
-                        e.stopPropagation(); // Stop propagation
+                        e.stopPropagation();
                         const sizeOptionsContainer = card.querySelector('.size-options');
                         sizeOptionsContainer.querySelectorAll('.size-box').forEach(box => box.classList.remove('selected', 'ring-2', 'ring-offset-1', 'ring-green-500'));
                         sizeBox.classList.add('selected', 'ring-2', 'ring-offset-1', 'ring-green-500');
@@ -880,11 +1062,11 @@
                     });
                 });
 
-                // Color Selector Logic
+                // Color Selector Logic (Unchanged)
                 card.querySelectorAll('.color-box').forEach(colorBox => {
                     colorBox.addEventListener('click', (e) => {
                         e.preventDefault();
-                        e.stopPropagation(); // Stop propagation
+                        e.stopPropagation();
                         const colorOptionsContainer = card.querySelector('.color-options');
                         colorOptionsContainer.querySelectorAll('.color-box').forEach(box => box.classList.remove('selected', 'ring-2', 'ring-offset-1', 'ring-green-500'));
                         colorBox.classList.add('selected', 'ring-2', 'ring-offset-1', 'ring-green-500');
@@ -892,11 +1074,11 @@
                     });
                 });
 
-                // Quantity Control Logic
+                // Quantity Control Logic (Unchanged)
                 card.querySelectorAll('.quantity-btn').forEach(button => {
                     button.addEventListener('click', (e) => {
                         e.preventDefault();
-                        e.stopPropagation(); // Stop propagation
+                        e.stopPropagation();
                         const action = button.dataset.action;
                         const quantityInput = card.querySelector('.product-quantity-input');
                         let currentVal = parseInt(quantityInput.value);
@@ -914,7 +1096,7 @@
                 radio.addEventListener('change', calculateTotal);
             });
 
-            // Collapsible toggle
+            // Collapsible toggle (Unchanged)
             collapsibleTitles.forEach(title => {
                 title.addEventListener('click', function () {
                     this.classList.toggle('active');
@@ -933,11 +1115,9 @@
                 });
             });
 
-            // Initial load calculation
+            // Initial load calculation (Unchanged)
             calculateTotal();
         });
-
-
     </script>
 
     <!-- image modal -->

@@ -71,6 +71,13 @@
         }
 
         /* Tailwind blue-500 */
+
+
+        /* Toast Style for Success */
+        .toast-success {
+            background-color: #10B981;
+            /* Tailwind green-500 */
+        }
     </style>
 
     <script>
@@ -863,6 +870,9 @@
                 btn.classList.add("bg-green-600", "hover:bg-green-700");
                 btn.removeAttribute("data-in-cart");
 
+
+
+
                 btn.addEventListener('click', function (e) {
                     e.preventDefault();
                     e.stopPropagation();
@@ -922,14 +932,23 @@
 
 
                     // Visual feedback (Unchanged)
-                    e.target.textContent = "Added to Cart!";
-                    e.target.classList.remove("bg-green-600", "hover:bg-green-700");
-                    e.target.classList.add("bg-blue-600", "hover:bg-blue-700");
-                    setTimeout(() => {
-                        e.target.textContent = "Add to Cart";
-                        e.target.classList.remove("bg-blue-600", "hover:bg-blue-700");
-                        e.target.classList.add("bg-green-600", "hover:bg-green-700");
-                    }, 500);
+                    // e.target.textContent = "Added to Cart!";
+                    // e.target.classList.remove("bg-green-600", "hover:bg-green-700");
+                    // e.target.classList.add("bg-blue-600", "hover:bg-blue-700");
+                    // setTimeout(() => {
+                    //     e.target.textContent = "Add to Cart";
+                    //     e.target.classList.remove("bg-blue-600", "hover:bg-blue-700");
+                    //     e.target.classList.add("bg-green-600", "hover:bg-green-700");
+                    // }, 500);
+
+
+                    // ✅ নতুন Toast Notification কল করুন
+                    showToast(`'${newItem.name}' কার্টে যোগ হয়েছে!`);
+
+
+
+
+
 
                     updateOrderSummary();
                 });
@@ -1119,6 +1138,31 @@
             // Initial load calculation (Unchanged)
             calculateTotal();
         });
+
+
+
+        // --- FUNCTION: Show Toast Notification ---
+        function showToast(message, type = 'success', duration = 2500) {
+            const toast = document.getElementById('toast-notification');
+            const messageElement = document.getElementById('toast-message');
+
+            // Reset classes and set message
+            toast.classList.remove('hidden', 'toast-success');
+            messageElement.textContent = message;
+
+            // Apply success style
+            if (type === 'success') {
+                toast.classList.add('toast-success');
+            }
+            // আপনি চাইলে error বা warning এর জন্য অন্য স্টাইল যুক্ত করতে পারেন
+
+            // Auto-hide the toast after the duration
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, duration);
+        }
+
+
     </script>
 
     <!-- image modal -->
@@ -1177,43 +1221,55 @@
         </div>
     </div>
 
+    <!-- Toast Notification -->
+    <div id="toast-notification" class="fixed top-5 right-5 z-50 p-4 rounded-lg shadow-xl hidden"
+        style="min-width: 250px;">
+        <div class="flex items-center space-x-3">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span id="toast-message" class="text-white font-semibold"></span>
+        </div>
+    </div>
+</body>
 
+</html>
 
-    <footer class="bg-gray-900 text-white text-[10px] sm:text-xs py-2 px-4 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-1 sm:space-y-0">
+<footer class="bg-gray-900 text-white text-[10px] sm:text-xs py-2 px-4 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-1 sm:space-y-0">
 
-            <div class="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-4">
-                <p class="order-2 sm:order-1 whitespace-nowrap">&copy; 2024 Kashmeeri. All Rights Reserved.</p>
+        <div class="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-4">
+            <p class="order-2 sm:order-1 whitespace-nowrap">&copy; 2024 Kashmeeri. All Rights Reserved.</p>
 
-                <div class="order-1 sm:order-2 flex space-x-3">
+            <div class="order-1 sm:order-2 flex space-x-3">
 
-                    <a href="mailto:info@kashmeeri.com"
-                        class="hover:text-green-400 whitespace-nowrap flex items-center">
-                        <img src="assets/icon/contact-us.png" alt="Email" class="w-4 h-4 mr-1">
-                        info@kashmeeri.com
-                    </a>
-
-                    <a href="tel:+8801825302915" class="hover:text-green-400 whitespace-nowrap flex items-center">
-                        <img src="assets/icon/phone.png" alt="Phone" class="w-4 h-4 mr-1">
-                        +880-1706954981
-                    </a>
-                </div>
-            </div>
-
-            <div class="flex space-x-5 mt-1 sm:mt-0">
-
-                <a href="https://www.facebook.com/profile.php?id=61578281266001" target="_blank" title="Facebook"
-                    class="hover:opacity-75 transition duration-300">
-                    <img src="assets/icon/facebook.png" alt="Facebook" class="w-5 h-5">
+                <a href="mailto:info@kashmeeri.com" class="hover:text-green-400 whitespace-nowrap flex items-center">
+                    <img src="assets/icon/contact-us.png" alt="Email" class="w-4 h-4 mr-1">
+                    info@kashmeeri.com
                 </a>
 
-                <a href="https://www.facebook.com/profile.php?id=61578281266001" target="_blank" title="Instagram"
-                    class="hover:opacity-75 transition duration-300">
-                    <img src="assets/icon/instagram.png" alt="Instagram" class="w-5 h-5">
+                <a href="tel:+8801825302915" class="hover:text-green-400 whitespace-nowrap flex items-center">
+                    <img src="assets/icon/phone.png" alt="Phone" class="w-4 h-4 mr-1">
+                    +880-1706954981
                 </a>
             </div>
         </div>
-    </footer>
+
+        <div class="flex space-x-5 mt-1 sm:mt-0">
+
+            <a href="https://www.facebook.com/profile.php?id=61578281266001" target="_blank" title="Facebook"
+                class="hover:opacity-75 transition duration-300">
+                <img src="assets/icon/facebook.png" alt="Facebook" class="w-5 h-5">
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=61578281266001" target="_blank" title="Instagram"
+                class="hover:opacity-75 transition duration-300">
+                <img src="assets/icon/instagram.png" alt="Instagram" class="w-5 h-5">
+            </a>
+        </div>
+    </div>
+</footer>
 
 
 </body>

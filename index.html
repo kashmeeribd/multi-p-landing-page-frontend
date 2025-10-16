@@ -657,7 +657,8 @@
                             <br>
                             <br>
                             <b>Special Notice Regarding Kashmeeri Products</b><br>
-                            <b>Kashmeeri</b> always puts its best effort into ensuring that the attributes of the product
+                            <b>Kashmeeri</b> always puts its best effort into ensuring that the attributes of the
+                            product
                             displayed on the website (such as color, fabric quality, size, and fitting) remain
                             completely consistent with the item you purchase from us.
 
@@ -1036,17 +1037,57 @@
 
 
                 // 6. Construct Final Order Object for API
+                // const finalOrder = {
+                //     billingDetails: { name: nameInput, phone: phoneInput, address: addressInput },
+                //     orderedProducts,
+                //     summary: {
+                //         subtotal: subtotal,
+                //         shipping: shippingCost,
+                //         total: total,
+                //         paymentMethod: "Cash On Delivery"
+                //     },
+                //     source: 'Landing Page'
+                // };
+
+
+
+
+
+
+                // 6. Construct Final Order Object for API
                 const finalOrder = {
-                    billingDetails: { name: nameInput, phone: phoneInput, address: addressInput },
-                    orderedProducts,
+                    // 1. কাস্টমার/বিলিং ডিটেইলস (Billing Details)
+                    billingDetails: {
+                        name: nameInput,
+                        phone: phoneInput,
+                        address: addressInput,
+                        // যদি আপনার সার্ভার city, postalCode-ও আশা করে, তবে এখানে যোগ করুন:
+                        // city: cityInput, 
+                        // postalCode: postalCodeInput
+                    },
+
+                    // 2. অর্ডার করা প্রোডাক্টস (Ordered Products)
+                    orderedProducts: orderedProducts,
+
+                    // 3. শিপিং ইনফো (ShippingInfo) - ডাটাবেস স্কিমা অনুযায়ী আলাদা অবজেক্ট
+                    shippingInfo: {
+                        type: 'Inside Dhaka', // আপনার ব্যবসার প্রয়োজন অনুযায়ী সেট করুন
+                        cost: shippingCost // শিপিং খরচ
+                    },
+
+                    // 4. সামারি (Summary)
                     summary: {
                         subtotal: subtotal,
-                        shipping: shippingCost,
                         total: total,
                         paymentMethod: "Cash On Delivery"
+                        // Note: shipping cost summary-এর মধ্যে আলাদা ফিল্ড হিসেবে প্রয়োজন নেই,
+                        // কারণ এটি shippingInfo.cost-এ আছে এবং total-এ যুক্ত করা হয়েছে।
                     },
+
+                    // 5. উৎস (Source)
                     source: 'Landing Page'
                 };
+
 
 
                 // 7. API Call to Node.js Server (REAL POST REQUEST - Unchanged Logic)

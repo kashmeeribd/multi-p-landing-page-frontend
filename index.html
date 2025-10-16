@@ -965,16 +965,42 @@
                 // 3. Prepare Data for API, Facebook Pixel, and GTM
 
                 // Data for API Payload (Backend)
-                const orderedProducts = shoppingCart.map(item => ({
-                    image: item.image,
-                    name: item.name,
-                    category: item.category,
-                    price: `Tk ${item.price.toFixed(2)}`,
-                    size: item.size,
-                    color: item.color,
-                    quantity: item.quantity,
-                    productId: item.productId
-                }));
+                const orderedProducts = shoppingCart.map(item => {
+                    let finalPrice;
+
+                    // মূল্য সঠিকভাবে সংখ্যায় রূপান্তর করা:
+                    if (typeof item.price === 'string') {
+                        // যদি এটি একটি স্ট্রিং হয় (যেমন 'Tk 1150.00'), তবে এটিকে সংখ্যায় রূপান্তর করো।
+                        // price: parseFloat(item.price.replace('Tk', '').replace(',', '').trim()),
+
+                        // এখানে শুধুমাত্র সংখ্যাগুলো রাখুন।
+                        const cleanedPrice = item.price.replace(/[^0-9.]/g, '');
+                        finalPrice = parseFloat(cleanedPrice);
+
+                    } else if (typeof item.price === 'number') {
+                        // যদি এটি ইতিমধ্যেই একটি সংখ্যা হয় (যেমন 1150), তবে সরাসরি ব্যবহার করো।
+                        finalPrice = item.price;
+                    } else {
+                        // যদি অন্য কোনো ডেটা টাইপ হয় বা null/undefined হয়, তবে 0 ধরো।
+                        finalPrice = 0;
+                    }
+
+                    // নিশ্চিত করুন যে price ফিল্ডে কোনো NaN (Not a Number) নেই।
+                    if (isNaN(finalPrice)) {
+                        finalPrice = 0;
+                    }
+
+                    return {
+                        image: item.image,
+                        name: item.name,
+                        category: item.category,
+                        price: finalPrice, // সংশোধিত মূল্য
+                        size: item.size,
+                        color: item.color,
+                        quantity: item.quantity,
+                        productId: item.productId
+                    };
+                });
 
                 const productNames = shoppingCart.map(item => item.name);
 
@@ -1089,7 +1115,7 @@
                 };
 
 
-
+                console.log("Final Order Object:", finalOrder); // Debug log
                 // 7. API Call to Node.js Server (REAL POST REQUEST - Unchanged Logic)
                 // const API_ENDPOINT = 'http://localhost:3000/api/orders';
                 const API_ENDPOINT = 'https://api.kashmeeri.com/api/orders';

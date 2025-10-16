@@ -1062,22 +1062,6 @@
                 }
 
 
-                // 6. Construct Final Order Object for API
-                // const finalOrder = {
-                //     billingDetails: { name: nameInput, phone: phoneInput, address: addressInput },
-                //     orderedProducts,
-                //     summary: {
-                //         subtotal: subtotal,
-                //         shipping: shippingCost,
-                //         total: total,
-                //         paymentMethod: "Cash On Delivery"
-                //     },
-                //     source: 'Landing Page'
-                // };
-
-
-
-
 
 
                 // 6. Construct Final Order Object for API
@@ -1133,31 +1117,58 @@
                     });
 
                     if (!response.ok) {
-                        throw new Error(`সার্ভার ত্রুটি: ${response.status} ${response.statusText}`);
+                        // যদি সার্ভার 4xx বা 5xx এরর দেয়
+                        const errorData = await response.json();
+                        const serverErrorMessage = errorData.message || 'অজানা সার্ভার ত্রুটি।';
+                        throw new Error(`সার্ভার ত্রুটি: ${response.status} - ${serverErrorMessage}`);
                     }
 
                     const result = await response.json();
 
                     if (result && result.orderId) {
-                        console.log("Server Response (Success):", result);
-                        alert(`অর্ডার সফলভাবে সম্পন্ন হয়েছে! Order ID: ${result.orderId}`);
+                        // 1. বড় Order ID থেকে শেষ ৪টি সংখ্যা নেওয়া
+                        const fullOrderId = result.orderId;
+                        const lastFourDigits = fullOrderId.slice(-4);
 
+                        // 2. মোট মূল্যের জন্য ফলব্যাক ব্যবহার করা (যদি total মিসিং থাকে)
+                        const orderTotal = (result.summary && result.summary.total) ? result.summary.total : 'মূল্য উপলব্ধ নয়';
+
+                        // 3. অতিরিক্ত হোয়াইটস্পেস ছাড়া পরিষ্কার মেসেজ তৈরি করা
+                        const informativeMessage = `
+                                        অর্ডার সফলভাবে সম্পন্ন হয়েছে! 🚀
+                                        আপনার অর্ডারটি নিশ্চিত করা হয়েছে।
+
+                                        Order ID :25 ${lastFourDigits}
+                                        মোট মূল্য: ${orderTotal} টাকা
+
+                                        শিগগিরই ডেলিভারির জন্য আপনার সাথে যোগাযোগ করা হবে। ধন্যবাদ!
+        `;
+
+                        // .trim() ব্যবহার করে শুরুতে/শেষে থাকা অপ্রয়োজনীয় লাইন ব্রেক বা স্পেস সরানো
+                        alert(informativeMessage.trim());
+
+                        // 4. অর্ডার সম্পন্ন হওয়ার পর ফর্ম এবং কার্ট রিসেট করা
                         shoppingCart = [];
                         updateOrderSummary();
 
                     } else {
-                        throw new Error("অর্ডার কনফার্মেশনে সমস্যা হয়েছে। সার্ভার থেকে কোনো অর্ডার আইডি পাওয়া যায়নি।");
+                        throw new Error("অর্ডার কনফার্মেশনে সমস্যা হয়েছে। সার্ভার থেকে কোনো অর্ডার আইডি পাওয়া যায়নি।");
                     }
 
                 } catch (error) {
                     console.error('Fetch Error:', error);
-                    alert(`অর্ডার দিতে ব্যর্থ: ${error.message}. অনুগ্রহ করে আপনার সার্ভার ঠিকানা (API_ENDPOINT) চেক করুন।`);
+                    alert(`অর্ডার দিতে ব্যর্থ: ${error.message}. অনুগ্রহ করে আপনার ডেটা বা সার্ভার চেক করুন।`);
 
                 } finally {
                     placeOrderButton.disabled = false;
                     placeOrderButton.textContent = 'PLACE ORDER';
                 }
             }
+
+
+
+
+
 
             // --- 5. Add to Cart button logic (AddToCart Pixel) ---
             document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
